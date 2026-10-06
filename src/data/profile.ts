@@ -98,8 +98,8 @@ export const profileData = {
     titleLine2: 'Construyamos algo increíble juntos.',
     subtitle:
       'Disponible para liderar desarrollos Full Stack, arquitecturas modernas con Astro/React/Node o consultoría de producto.',
-    email: 'hola@georgecastillo.dev',
-    phone: '+51 987 654 321',
+    email: 'gcastle.dev',
+    phone: '+51 931356773',
     location: 'Lima, Perú · Remoto Global',
     availability: 'Disponible para nuevos proyectos Q4',
     projectTypes: [
