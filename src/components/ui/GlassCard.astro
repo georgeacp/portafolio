@@ -1,0 +1,31 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+import { cn } from '../../lib/utils';
+
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{ as: Tag }> & {
+  variant?: 'section' | 'card' | 'interactive' | 'pill';
+  class?: string;
+  id?: string;
+};
+
+const {
+  as: Tag = 'div',
+  variant = 'card',
+  class: className,
+  id,
+  ...rest
+} = Astro.props;
+
+const variantStyles = {
+  section:
+    'glass-section rounded-[30px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11 relative overflow-hidden',
+  card: 'glass-card rounded-2xl sm:rounded-[22px] p-5 sm:p-6 relative',
+  interactive:
+    'glass-card glass-card-interactive rounded-2xl sm:rounded-[22px] p-5 sm:p-6 relative',
+  pill: 'glass-pill rounded-full px-5 py-2.5 relative',
+};
+---
+
+<Tag id={id} class={cn(variantStyles[variant], className)} {...rest}>
+  <slot />
+</Tag>

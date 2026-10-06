@@ -1,1 +1,244 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-violet: #8B5CF6;
+  --color-brand-indigo: #6366F1;
+  --color-brand-sky: #60A5FA;
+  --color-ink-primary: #0F0E17;
+  --color-ink-secondary: #475569;
+  --color-ink-muted: #64748B;
+}
+
+:root {
+  color-scheme: light;
+  --bg-canvas: #F2F3FA;
+  --glass-section-bg: rgba(255, 255, 255, 0.54);
+  --glass-section-border: rgba(255, 255, 255, 0.78);
+  --glass-card-bg: rgba(255, 255, 255, 0.72);
+  --glass-card-border: rgba(255, 255, 255, 0.88);
+  --glass-pill-bg: rgba(255, 255, 255, 0.76);
+  --glass-pill-border: rgba(255, 255, 255, 0.85);
+  --shadow-section: 0 24px 64px -16px rgba(79, 70, 229, 0.09), 0 4px 20px -4px rgba(15, 23, 42, 0.03), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  --shadow-card: 0 12px 32px -8px rgba(79, 70, 229, 0.06), 0 2px 8px -2px rgba(15, 23, 42, 0.03), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  --shadow-card-hover: 0 20px 42px -10px rgba(99, 102, 241, 0.14), 0 4px 14px -2px rgba(15, 23, 42, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  --shadow-pill: 0 12px 34px -8px rgba(79, 70, 229, 0.1), 0 2px 8px -2px rgba(15, 23, 42, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  --shadow-dark-btn: 0 14px 30px -6px rgba(15, 14, 23, 0.38), 0 4px 10px -2px rgba(15, 14, 23, 0.2);
+
+  /* Brand Logo GC - Light Mode (Obsidian Navy + Champagne Gold) */
+  --logo-body-deep: #111726;
+  --logo-body-mid: #1B2436;
+  --logo-body-soft: #263248;
+  --logo-gold-peak: #FBE3B5;
+  --logo-gold-warm: #D8AF72;
+  --logo-gold-bronze: #9A7644;
+  --logo-crease-shadow: #0A0E17;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg-canvas: #080711;
+  --glass-section-bg: rgba(17, 15, 34, 0.62);
+  --glass-section-border: rgba(255, 255, 255, 0.09);
+  --glass-card-bg: rgba(27, 24, 52, 0.66);
+  --glass-card-border: rgba(255, 255, 255, 0.11);
+  --glass-pill-bg: rgba(25, 22, 48, 0.78);
+  --glass-pill-border: rgba(255, 255, 255, 0.14);
+  --shadow-section: 0 28px 70px -16px rgba(0, 0, 0, 0.65), 0 4px 24px -4px rgba(124, 58, 237, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --shadow-card: 0 14px 36px -8px rgba(0, 0, 0, 0.48), 0 2px 10px -2px rgba(99, 102, 241, 0.07), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  --shadow-card-hover: 0 22px 48px -10px rgba(124, 58, 237, 0.24), 0 6px 18px -2px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+  --shadow-pill: 0 14px 36px -8px rgba(0, 0, 0, 0.55), 0 2px 10px -2px rgba(124, 58, 237, 0.14), inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+  --shadow-dark-btn: 0 14px 32px -6px rgba(124, 58, 237, 0.45), 0 4px 12px -2px rgba(99, 102, 241, 0.3);
+
+  /* Brand Logo GC - Dark Mode (Luminous Pearl Silver + Radiant Gold) */
+  --logo-body-deep: #F8FAFC;
+  --logo-body-mid: #E2E8F0;
+  --logo-body-soft: #CBD5E1;
+  --logo-gold-peak: #FEF08A;
+  --logo-gold-warm: #F59E0B;
+  --logo-gold-bronze: #D97706;
+  --logo-crease-shadow: #64748B;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--color-ink-primary);
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 320ms ease, color 220ms ease;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(167, 139, 250, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 85% 18%, rgba(129, 140, 248, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 50% 52%, rgba(196, 181, 253, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 82% 88%, rgba(147, 197, 253, 0.18) 0%, transparent 45%),
+    linear-gradient(180deg, #F5F6FC 0%, #ECEEF9 48%, #F3F4FB 100%);
+  transition: background 320ms ease;
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(139, 92, 246, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 85% 18%, rgba(99, 102, 241, 0.17) 0%, transparent 45%),
+    radial-gradient(circle at 50% 52%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 82% 88%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #080711 0%, #0D0B1B 48%, #090814 100%);
+}
+
+/* Master outer frosted section container */
+.glass-section {
+  background: var(--glass-section-bg);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid var(--glass-section-border);
+  box-shadow: var(--shadow-section);
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+/* Inner frosted sub-cards */
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--glass-card-border);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 240ms ease,
+    border-color 240ms ease;
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-card-hover);
+}
+
+html.dark .glass-card-interactive:hover {
+  transform: translateY(-4px);
+  background: rgba(37, 33, 70, 0.84);
+  border-color: rgba(167, 139, 250, 0.32);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Pill glass badge / navbar surface */
+.glass-pill {
+  background: var(--glass-pill-bg);
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid var(--glass-pill-border);
+  box-shadow: var(--shadow-pill);
+  transition:
+    background-color 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Role / Headline gradient (#8B5CF6 -> #6366F1 -> #60A5FA) */
+.text-role-gradient {
+  background: linear-gradient(92deg, #9333EA 0%, #7C3AED 32%, #6366F1 68%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html.dark .text-role-gradient {
+  background: linear-gradient(92deg, #C084FC 0%, #A78BFA 35%, #818CF8 70%, #7DD3FC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Primary button: obsidian in light mode, luminous electric violet-indigo in dark mode */
+.btn-primary-dark {
+  background: linear-gradient(180deg, #1A1829 0%, #0B0A12 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow-dark-btn);
+  transition:
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 200ms ease,
+    background 240ms ease;
+}
+
+html.dark .btn-primary-dark {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 60%, #4F46E5 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: var(--shadow-dark-btn);
+}
+
+.btn-primary-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -6px rgba(15, 14, 23, 0.48), 0 6px 14px -2px rgba(99, 102, 241, 0.24);
+  filter: brightness(1.06);
+}
+
+html.dark .btn-primary-dark:hover {
+  box-shadow: 0 20px 40px -6px rgba(124, 58, 237, 0.58), 0 6px 16px -2px rgba(96, 165, 250, 0.32);
+  filter: brightness(1.1);
+}
+
+.btn-primary-dark:active {
+  transform: scale(0.98);
+}
+
+/* Subtle floating keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+
+.animate-float-slow-reverse {
+  animation: floatSlowReverse 7.5s ease-in-out infinite;
+}
+
+:focus-visible {
+  outline: 2px solid #8B5CF6;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

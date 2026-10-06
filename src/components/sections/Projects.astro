@@ -1,0 +1,16 @@
+---
+import ProjectsShowcase from './ProjectsShowcase';
+import { projectsSectionData, projectsData } from '../../data/projects';
+---
+
+<section id="proyectos" aria-labelledby="projects-heading" class="mb-6">
+  <ProjectsShowcase
+    client:visible
+    eyebrow={projectsSectionData.eyebrow}
+    title={projectsSectionData.title}
+    ctaLabel={projectsSectionData.ctaLabel}
+    ctaHref={projectsSectionData.ctaHref}
+    categories={projectsSectionData.categories}
+    projects={projectsData}
+  />
+</section>

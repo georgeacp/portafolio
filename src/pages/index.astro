@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/layout/Navbar.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Experience from '../components/sections/Experience.astro';
+import Projects from '../components/sections/Projects.astro';
+import Contact from '../components/sections/Contact.astro';
+import Footer from '../components/layout/Footer.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <!-- 1. Floating Pill Glass Navbar -->
+  <Navbar />
+
+  <!-- Main Single-Page Anchor Content -->
+  <main>
+    <!-- 2. Hero Section (Greeting, Gradient Role, Portrait Glass Frame, 5+ & +120% Floating Cards) -->
+    <Hero />
+
+    <!-- 3. About Me (3 Metrics Strip) + Technologies Grid (App-Icon Glass Cards) -->
+    <About />
+
+    <!-- 4. Experience Timeline + 5-Step Engineering Process -->
+    <Experience />
+
+    <!-- 5. Selected Work / Featured Projects (Interactive React Island Filter + Rich Mockups) -->
+    <Projects />
+
+    <!-- 6. Let's Connect / Contact Section (Details + Glass Contact Form Island + 3D Sphere) -->
+    <Contact />
+  </main>
+
+  <!-- 7. Glass Footer Bar -->
+  <Footer />
 </Layout>

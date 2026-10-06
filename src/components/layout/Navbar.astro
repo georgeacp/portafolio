@@ -1,0 +1,13 @@
+---
+import NavbarIsland from './NavbarIsland';
+import { navItems, profileData } from '../../data/profile';
+---
+
+<NavbarIsland
+  client:idle
+  navItems={navItems}
+  monogram={profileData.monogram}
+  name={profileData.name}
+  role={profileData.shortRole}
+  talkCta={profileData.talkCta}
+/>
