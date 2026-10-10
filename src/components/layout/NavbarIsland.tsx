@@ -89,21 +89,21 @@ export default function NavbarIsland({
             : ''
         }`}
       >
-        <div className="flex items-center justify-between gap-3 sm:gap-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Monogram circle + Name & Role */}
           <a
             href="#home"
             onClick={() => setActiveId('home')}
-            className="group flex items-center gap-3 focus:outline-none"
+            className="group flex min-w-0 items-center gap-2 sm:gap-3 focus:outline-none"
           >
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/95 dark:bg-[#131127]/90 shadow-[0_4px_14px_rgba(15,23,42,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] border border-white dark:border-white/18 transition-transform duration-200 group-hover:scale-105">
               <BrandLogo className="h-7 w-7" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-sm sm:text-[15px] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+            <div className="flex min-w-0 flex-col">
+              <span className="text-[13px] min-[400px]:text-sm sm:text-[15px] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                 {name}
               </span>
-              <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-tight">
+              <span className="max-[380px]:hidden text-[10px] min-[400px]:text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-tight">
                 {role}
               </span>
             </div>
@@ -145,14 +145,14 @@ export default function NavbarIsland({
           </ul>
 
           {/* Right: Dark/Light Theme Toggle Button + "Hablemos ↗" Pill CTA + Mobile Hamburger */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
             {/* Theme Toggle Button */}
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
               title={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-              className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/95 dark:bg-white/12 hover:bg-white dark:hover:bg-white/20 border border-white dark:border-white/20 text-slate-800 dark:text-amber-300 shadow-[0_6px_18px_-4px_rgba(79,70,229,0.16)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/95 dark:bg-white/12 hover:bg-white dark:hover:bg-white/20 border border-white dark:border-white/20 text-slate-800 dark:text-amber-300 shadow-[0_6px_18px_-4px_rgba(79,70,229,0.16)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {isDark ? (
@@ -184,7 +184,7 @@ export default function NavbarIsland({
             {/* "Hablemos ↗" CTA Pill */}
             <a
               href={talkCta.href}
-              className="inline-flex items-center gap-2 rounded-full bg-white/95 dark:bg-white/14 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 px-4 sm:px-5 py-2 text-xs sm:text-[13px] font-bold text-slate-900 dark:text-white shadow-[0_6px_20px_-4px_rgba(79,70,229,0.14)] transition-all duration-200 hover:-translate-y-0.5 active:scale-98"
+              className="max-[480px]:hidden inline-flex min-h-11 items-center gap-2 rounded-full bg-white/95 dark:bg-white/14 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 px-4 sm:px-5 py-2 text-xs sm:text-[13px] font-bold text-slate-900 dark:text-white shadow-[0_6px_20px_-4px_rgba(79,70,229,0.14)] transition-all duration-200 hover:-translate-y-0.5 active:scale-98"
             >
               <span>{talkCta.label}</span>
               <ArrowUpRight className="h-3.5 w-3.5 text-slate-700 dark:text-violet-300" />
@@ -196,7 +196,7 @@ export default function NavbarIsland({
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
-              className="inline-flex lg:hidden h-9 w-9 items-center justify-center rounded-full bg-white/90 dark:bg-white/12 border border-white dark:border-white/20 text-slate-800 dark:text-white shadow-sm"
+              className="inline-flex lg:hidden h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/90 dark:bg-white/12 border border-white dark:border-white/20 text-slate-800 dark:text-white shadow-sm"
             >
               {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
@@ -225,7 +225,7 @@ export default function NavbarIsland({
                         setActiveId(item.id);
                         setMobileMenuOpen(false);
                       }}
-                      className={`flex items-center justify-between rounded-2xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+                      className={`flex min-h-11 items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold transition-colors ${
                         isActive
                           ? 'bg-white dark:bg-white/14 text-slate-950 dark:text-white shadow-sm'
                           : 'text-slate-600 dark:text-slate-300 hover:bg-white/60 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white'

@@ -211,7 +211,7 @@ export default function ProjectsShowcase({
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11">
+    <div className="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11" data-reveal>
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-8">
         <div>
@@ -231,7 +231,7 @@ export default function ProjectsShowcase({
           <div
             role="tablist"
             aria-label="Filtrar proyectos por categoría"
-            className="glass-pill inline-flex flex-wrap items-center gap-1 rounded-full p-1"
+            className="glass-pill inline-flex flex-wrap items-center gap-1 rounded-2xl p-1 sm:rounded-full"
           >
             {categories.map((cat) => {
               const isSelected = activeCategory === cat;
@@ -242,7 +242,7 @@ export default function ProjectsShowcase({
                   role="tab"
                   aria-selected={isSelected}
                   onClick={() => setActiveCategory(cat)}
-                  className={`relative rounded-full px-3.5 py-1.5 text-xs font-bold transition-colors cursor-pointer ${
+                  className={`relative min-h-11 rounded-full px-3.5 py-3 text-xs font-bold transition-colors cursor-pointer ${
                     isSelected
                       ? 'text-slate-950 dark:text-white'
                       : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
@@ -266,7 +266,7 @@ export default function ProjectsShowcase({
             href={ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-pill hover:bg-white dark:hover:bg-white/16 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-slate-900 dark:text-white transition-all hover:-translate-y-0.5"
+            className="glass-pill hover:bg-white dark:hover:bg-white/16 inline-flex min-h-11 items-center gap-2 rounded-full px-5 py-3 text-xs font-bold text-slate-900 dark:text-white transition-all hover:-translate-y-0.5"
           >
             <span>{ctaLabel}</span>
             <ArrowUpRight className="h-3.5 w-3.5 text-slate-700 dark:text-violet-300" />
@@ -300,7 +300,7 @@ export default function ProjectsShowcase({
 
                 {/* Title, Category & Action Circle */}
                 <div className="mt-4 px-1.5 flex items-start justify-between gap-3">
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="text-base sm:text-[17px] font-extrabold tracking-tight text-slate-950 dark:text-white group-hover:text-violet-700 dark:group-hover:text-violet-300 transition-colors">
                       {project.title}
                     </h3>
@@ -316,7 +316,7 @@ export default function ProjectsShowcase({
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Ver código de ${project.title} en GitHub`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full bg-white/85 dark:bg-white/12 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white shadow-xs transition-all hover:scale-105"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/85 dark:bg-white/12 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white shadow-xs transition-all hover:scale-105"
                     >
                       <svg
                         className="h-4 w-4"
@@ -337,7 +337,7 @@ export default function ProjectsShowcase({
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Abrir demo en vivo de ${project.title}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full bg-white dark:bg-violet-600 hover:bg-slate-950 dark:hover:bg-violet-500 border border-white dark:border-violet-400/40 text-slate-900 dark:text-white hover:text-white shadow-sm transition-all hover:scale-105"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white dark:bg-violet-600 hover:bg-slate-950 dark:hover:bg-violet-500 border border-white dark:border-violet-400/40 text-slate-900 dark:text-white hover:text-white shadow-sm transition-all hover:scale-105"
                     >
                       <ArrowUpRight className="h-4 w-4" />
                     </a>

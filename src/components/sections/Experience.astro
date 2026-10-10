@@ -4,7 +4,7 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
 
 <section id="experiencia" aria-labelledby="experience-heading" class="space-y-6 mb-6">
   <!-- PART A: VERTICAL TIMELINE + GLASS CARDS -->
-  <div class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11">
+  <div data-reveal class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
       <div>
         <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400 mb-1.5">
@@ -25,9 +25,9 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
 
     <!-- Vertical Timeline Container -->
     <div class="relative pl-5 sm:pl-8 before:absolute before:top-4 before:bottom-4 before:left-[9px] sm:before:left-[13px] before:w-[2px] before:bg-gradient-to-b before:from-violet-500 before:via-indigo-400/70 before:to-slate-200 dark:before:to-white/10">
-      <div class="space-y-5 sm:space-y-6">
+      <div class="space-y-5 sm:space-y-6" data-reveal-stagger>
         {experiences.map((exp) => (
-          <article class="relative group">
+          <article data-reveal class="relative group">
             <!-- Timeline Node Dot -->
             <div
               aria-hidden="true"
@@ -49,7 +49,14 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
                     class={`hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border ${exp.accentTheme.iconBg} dark:bg-white/10 dark:border-white/15 ${exp.accentTheme.iconColor} dark:text-violet-300 shadow-xs`}
                   >
                     {exp.iconType === 'architecture' && (
-                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                      <img
+                        src="https://rapidboard.app/logo/logo.svg"
+                        alt="Logo de RapidBoard"
+                        class="h-8 w-8 object-contain"
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      />
                     )}
                     {exp.iconType === 'fullstack' && (
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
@@ -131,7 +138,7 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
   </div>
 
   <!-- PART B: 5-STEP PROCESS STRIP -->
-  <div class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-10">
+  <div data-reveal class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-10">
     <div class="mb-6">
       <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400 mb-1.5">
         {experienceSectionData.processEyebrow}
@@ -141,9 +148,9 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
       </h3>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 relative">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 relative" data-reveal-stagger>
       {engineeringProcess.map((proc, idx) => (
-        <div class="glass-card glass-card-interactive rounded-2xl p-5 border border-white/95 dark:border-white/14 relative flex flex-col justify-between">
+        <div data-reveal class="glass-card glass-card-interactive rounded-2xl p-5 border border-white/95 dark:border-white/14 relative flex flex-col justify-between">
           <div class="flex items-center justify-between mb-4">
             <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10 dark:bg-violet-500/20 border border-violet-500/15 dark:border-violet-400/25 text-violet-600 dark:text-violet-300">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/></svg>

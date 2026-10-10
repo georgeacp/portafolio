@@ -92,5 +92,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://georgeca
     <div class="relative z-10 mx-auto max-w-[1220px] px-4 sm:px-6 lg:px-8 pt-4 pb-12">
       <slot />
     </div>
+
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var targets = document.querySelectorAll('[data-reveal]');
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!targets.length || prefersReducedMotion || !('IntersectionObserver' in window)) {
+          targets.forEach(function (target) {
+            target.classList.add('is-visible');
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, currentObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              currentObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -48px 0px',
+        });
+
+        targets.forEach(function (target) {
+          if (target.parentElement && target.parentElement.hasAttribute('data-reveal-stagger')) {
+            var siblings = Array.from(target.parentElement.children);
+            target.style.setProperty('--reveal-index', String(siblings.indexOf(target)));
+          }
+          observer.observe(target);
+        });
+        root.setAttribute('data-scroll-reveal', 'ready');
+      })();
+    </script>
   </body>
 </html>

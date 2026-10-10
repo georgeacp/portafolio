@@ -5,7 +5,7 @@ import { skillsSectionData, techSkills } from '../../data/skills';
 
 <section id="sobre-mi" aria-labelledby="about-heading" class="space-y-6 mb-6">
   <!-- PART A: ABOUT ME GLASS PANEL -->
-  <div class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11">
+  <div data-reveal class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-11">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       <!-- Left Half: Eyebrow + 2-Line Title + 3-Metric Inner Glass Strip -->
       <div class="lg:col-span-6">
@@ -21,9 +21,9 @@ import { skillsSectionData, techSkills } from '../../data/skills';
         </h2>
 
         <!-- 3 Metrics Inner Glass Card (5+, 30+, 15+) -->
-        <div class="glass-card mt-6 rounded-2xl p-4 sm:p-5 grid grid-cols-3 gap-3 sm:gap-5 border border-white/95 dark:border-white/15">
+        <div class="glass-card mt-6 rounded-2xl p-4 sm:p-5 grid grid-cols-3 gap-3 sm:gap-5 border border-white/95 dark:border-white/15" data-reveal-stagger>
           {profileData.about.metrics.map((metric, idx) => (
-            <div class={`${idx !== 0 ? 'border-l border-slate-200/70 dark:border-white/10 pl-3 sm:pl-5' : ''}`}>
+            <div data-reveal class={`${idx !== 0 ? 'border-l border-slate-200/70 dark:border-white/10 pl-3 sm:pl-5' : ''}`}>
               <!-- Small tinted icon square -->
               <div class="mb-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10 dark:bg-violet-500/20 border border-violet-500/15 dark:border-violet-400/25 text-violet-600 dark:text-violet-300">
                 {metric.icon === 'experience' && (
@@ -83,7 +83,7 @@ import { skillsSectionData, techSkills } from '../../data/skills';
   </div>
 
   <!-- PART B: TECHNOLOGIES I USE GLASS PANEL -->
-  <div class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-10">
+  <div data-reveal class="glass-section rounded-[32px] sm:rounded-[34px] p-6 sm:p-9 lg:p-10">
     <div class="mb-6">
       <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400 mb-1.5">
         {skillsSectionData.eyebrow}
@@ -93,9 +93,9 @@ import { skillsSectionData, techSkills } from '../../data/skills';
       </h3>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-3.5">
+    <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-3.5" data-reveal-stagger>
       {techSkills.map((skill) => (
-        <div
+        <div data-reveal
           class="glass-card glass-card-interactive group flex flex-col items-center justify-center rounded-2xl py-4 px-3 text-center border border-white/95 dark:border-white/14"
         >
           <!-- App-Icon Style Rounded Square Badge -->
