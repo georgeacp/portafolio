@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import type { ProjectCategory, ProjectItem } from '../../data/projects';
 
 interface ProjectsShowcaseProps {
@@ -13,8 +13,47 @@ interface ProjectsShowcaseProps {
 }
 
 function ProjectVisualMockup({ type }: { type: ProjectItem['mockupType'] }) {
-  if (type === 'rapidboard-dashboard') {
+  if (type === 'kucode-landing') {
     return (
+      <div className="h-full w-full flex items-center justify-center px-2 py-2">
+        <div className="flex h-full w-full flex-col overflow-hidden rounded-xl border border-white/90 bg-white shadow-lg dark:border-white/15 dark:bg-[#191632]">
+          <div className="flex h-7 shrink-0 items-center justify-between border-b border-slate-100 px-3 dark:border-white/10">
+            <div className="flex items-center gap-1.5">
+              <span className="flex h-4 w-4 items-center justify-center rounded bg-slate-950 text-[7px] font-black text-white dark:bg-white dark:text-slate-950">K</span>
+              <span className="text-[7px] font-extrabold tracking-tight text-slate-900 dark:text-white">KU CODE LABS</span>
+            </div>
+            <span className="text-[6px] font-semibold text-slate-500 dark:text-slate-400">TRUJILLO · PERÚ</span>
+          </div>
+          <div className="grid flex-1 grid-cols-12 items-center gap-2 bg-gradient-to-br from-sky-50 via-white to-indigo-50 p-3 dark:from-slate-900 dark:via-[#17152a] dark:to-indigo-950/50">
+            <div className="col-span-7">
+              <span className="inline-flex rounded-full bg-sky-100 px-1.5 py-1 text-[5px] font-bold uppercase tracking-wide text-sky-800 dark:bg-sky-400/15 dark:text-sky-200">
+                Sede principal · Trujillo
+              </span>
+              <div className="mt-1.5 text-[10px] font-extrabold leading-tight text-slate-950 dark:text-white">
+                Desarrollo de software en Trujillo
+              </div>
+              <div className="mt-1 text-[6px] leading-snug text-slate-600 dark:text-slate-300">
+                Software, apps móviles, IA y seguridad para empresas.
+              </div>
+              <span className="mt-2 inline-flex rounded-full bg-slate-950 px-2 py-1 text-[6px] font-bold text-white dark:bg-white dark:text-slate-950">
+                Hablemos ↗
+              </span>
+            </div>
+            <div className="col-span-5 flex flex-col gap-1.5">
+              {['Software a medida', 'Apps móviles', 'Pentesting', 'WhatsApp + IA'].map((service) => (
+                <div key={service} className="flex items-center gap-1.5 rounded-md border border-white bg-white/85 px-1.5 py-1.5 text-[6px] font-semibold text-slate-700 shadow-sm dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />
+                  {service}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
       <div className="h-full w-full flex items-center justify-center px-2 py-2">
         <div className="flex h-full w-full overflow-hidden rounded-xl border border-white/90 bg-white/95 shadow-lg dark:border-white/15 dark:bg-[#191632]/95">
           <aside className="flex w-[22%] shrink-0 flex-col gap-2 border-r border-slate-100 bg-slate-50/80 p-2 dark:border-white/10 dark:bg-white/[0.03]">
@@ -60,128 +99,6 @@ function ProjectVisualMockup({ type }: { type: ProjectItem['mockupType'] }) {
           </div>
         </div>
       </div>
-    );
-  }
-
-  if (type === 'analytics-dashboard') {
-    return (
-      <div className="h-full w-full flex items-center justify-center pt-1 px-2">
-        <div className="w-full h-[94%] rounded-xl bg-white/95 dark:bg-[#191632]/95 border border-white dark:border-white/15 shadow-lg p-2.5 flex gap-2.5">
-          {/* Mini Sidebar */}
-          <div className="w-9 shrink-0 rounded-lg bg-slate-50 dark:bg-white/6 border border-slate-100 dark:border-white/10 p-1.5 flex flex-col items-center gap-1.5">
-            <span className="h-3 w-3 rounded-md bg-violet-600" />
-            <span className="h-1.5 w-4 rounded bg-slate-200 dark:bg-white/20 mt-1" />
-            <span className="h-1.5 w-4 rounded bg-violet-300 dark:bg-violet-400" />
-            <span className="h-1.5 w-4 rounded bg-slate-200 dark:bg-white/20" />
-            <span className="h-1.5 w-4 rounded bg-slate-200 dark:bg-white/20" />
-          </div>
-
-          {/* Dashboard Body */}
-          <div className="flex-1 flex flex-col justify-between">
-            <div className="grid grid-cols-3 gap-1.5">
-              <div className="rounded-lg bg-violet-50/70 dark:bg-violet-500/15 border border-violet-100 dark:border-violet-400/20 p-1.5">
-                <div className="text-[6px] text-slate-500 dark:text-slate-300">Requests/s</div>
-                <div className="text-[9px] font-extrabold text-slate-900 dark:text-white">142.8k</div>
-              </div>
-              <div className="rounded-lg bg-indigo-50/70 dark:bg-indigo-500/15 border border-indigo-100 dark:border-indigo-400/20 p-1.5">
-                <div className="text-[6px] text-slate-500 dark:text-slate-300">Latencia p95</div>
-                <div className="text-[9px] font-extrabold text-indigo-600 dark:text-indigo-300">18.4ms</div>
-              </div>
-              <div className="rounded-lg bg-sky-50/70 dark:bg-sky-500/15 border border-sky-100 dark:border-sky-400/20 p-1.5">
-                <div className="text-[6px] text-slate-500 dark:text-slate-300">Uptime</div>
-                <div className="text-[9px] font-extrabold text-emerald-600 dark:text-emerald-400">99.99%</div>
-              </div>
-            </div>
-
-            {/* Chart Area */}
-            <div className="rounded-lg bg-slate-50/80 dark:bg-white/5 border border-slate-100 dark:border-white/10 p-2 flex items-end justify-between gap-1.5 h-16">
-              {[42, 68, 54, 86, 62, 95, 76, 100, 84, 92].map((h, i) => (
-                <div
-                  key={i}
-                  style={{ height: `${h}%` }}
-                  className={`flex-1 rounded-t-sm ${
-                    i % 2 === 0
-                      ? 'bg-gradient-to-t from-indigo-500 to-violet-400'
-                      : 'bg-indigo-200/85 dark:bg-indigo-400/35'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === 'saas-landing') {
-    return (
-      <div className="h-full w-full flex items-center justify-center pt-1 px-2">
-        <div className="w-full h-[94%] rounded-xl bg-white/95 dark:bg-[#191632]/95 border border-white dark:border-white/15 shadow-lg overflow-hidden flex flex-col">
-          {/* Browser Top Bar */}
-          <div className="h-4 bg-slate-50 dark:bg-white/6 border-b border-slate-100 dark:border-white/10 px-2 flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-rose-300" />
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-          </div>
-          {/* Landing Hero Preview */}
-          <div className="flex-1 p-3 grid grid-cols-12 gap-2 items-center bg-gradient-to-br from-white via-indigo-50/40 to-violet-100/40 dark:from-[#1C1838] dark:via-indigo-950/50 dark:to-violet-950/50">
-            <div className="col-span-7 space-y-1.5">
-              <span className="inline-block rounded-full bg-violet-100 dark:bg-violet-500/25 px-1.5 py-0.5 text-[6px] font-bold text-violet-700 dark:text-violet-200">
-                ASTRO 7 + MOTION
-              </span>
-              <div className="text-[10px] font-extrabold text-slate-900 dark:text-white leading-tight">
-                Build Next-Gen Interfaces Faster
-              </div>
-              <div className="h-1.5 w-4/5 rounded bg-slate-200 dark:bg-white/20" />
-              <div className="pt-1 flex gap-1">
-                <span className="rounded-full bg-slate-900 dark:bg-violet-600 px-2 py-0.5 text-[6px] font-bold text-white">
-                  Get Started
-                </span>
-                <span className="rounded-full bg-white dark:bg-white/10 border border-slate-200 dark:border-white/20 px-2 py-0.5 text-[6px] font-bold text-slate-700 dark:text-slate-200">
-                  Docs
-                </span>
-              </div>
-            </div>
-            <div className="col-span-5 flex justify-center">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-tr from-violet-600 via-indigo-500 to-sky-400 p-2 shadow-md flex items-center justify-center text-white">
-                <Sparkles className="h-6 w-6" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="h-full w-full flex items-center justify-center pt-1 px-2">
-      <div className="w-full h-[94%] rounded-xl bg-white/95 dark:bg-[#191632]/95 border border-white dark:border-white/15 shadow-lg p-3 flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-slate-100 dark:border-white/10 pb-2">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-violet-600 dark:bg-violet-400" />
-            <span className="text-[8px] font-bold text-slate-800 dark:text-slate-100 uppercase tracking-wider">
-              {type.replace('-', ' ')}
-            </span>
-          </div>
-          <span className="rounded-full bg-emerald-50 dark:bg-emerald-500/20 px-2 py-0.5 text-[7px] font-bold text-emerald-700 dark:text-emerald-300">
-            PRODUCTION READY
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-2 my-auto">
-          <div className="rounded-lg bg-gradient-to-br from-violet-500/10 to-indigo-500/10 dark:from-violet-500/20 dark:to-indigo-500/20 border border-violet-200/60 dark:border-violet-400/25 p-2">
-            <div className="text-[7px] text-violet-700 dark:text-violet-300 font-bold">Throughput</div>
-            <div className="text-xs font-extrabold text-slate-900 dark:text-white mt-0.5">99.98%</div>
-          </div>
-          <div className="rounded-lg bg-slate-50 dark:bg-white/6 border border-slate-200/70 dark:border-white/15 p-2">
-            <div className="text-[7px] text-slate-500 dark:text-slate-300 font-bold">Architecture</div>
-            <div className="text-xs font-extrabold text-indigo-600 dark:text-indigo-300 mt-0.5">Distributed</div>
-          </div>
-        </div>
-        <div className="h-2 w-full rounded-full bg-slate-100 dark:bg-white/10 overflow-hidden">
-          <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-violet-600 to-sky-400" />
-        </div>
-      </div>
-    </div>
   );
 }
 

@@ -3,7 +3,9 @@ export interface ExperienceItem {
   step: string;
   role: string;
   company: string;
-  location: string;
+  location?: string;
+  logo?: string;
+  logoSize?: "regular" | "compact";
   period: string;
   current?: boolean;
   summary: string;
@@ -32,6 +34,7 @@ export const experiences: ExperienceItem[] = [
     role: "Full Stack - Devops",
     company: "Rapidboard",
     location: "Remoto · Trujillo, PE",
+    logo: "https://rapidboard.app/logo/logo.svg",
     period: "2025 — Presente",
     current: true,
     summary:
@@ -61,26 +64,19 @@ export const experiences: ExperienceItem[] = [
   {
     id: "exp-2",
     step: "02",
-    role: "Full Stack Developer",
-    company: "Aether Digital Studio",
-    location: "Híbrido · Lima / Madrid",
-    period: "2022 — 2024",
+    role: "Desarrollador Full Stack Jr.",
+    company: "Grupo Insight Out",
+    logo: "/images/grupo-insight-out.png",
+    period: "Jul – Nov 2025",
     summary:
-      "Desarrollo end-to-end de plataformas SaaS B2B, dashboards analíticos en tiempo real e integraciones API.",
+      "Sistema Integral de Gestión para Gimnasio",
     highlights: [
-      "Construí un motor de reportes analíticos en tiempo real con WebSockets, React y cachés distribuidos en Redis.",
-      "Automatizaciones CI/CD con GitHub Actions y contenedores Docker en AWS ECS, reduciendo tiempos de despliegue de 35m a 4m.",
-      "Colaboré directamente con diseño de producto para entregar interfaces fluidas con Motion y puntajes Lighthouse 98+.",
+      "Diseñé y desarrollé una arquitectura de microservicios para un sistema usado por 100–200 clientes.",
+      "Implementé módulos CRUD (usuarios, rutinas, citas, métricas) con autenticación y autorización basadas en JWT.",
+      "Reduje ~35% el tiempo de respuesta de endpoints críticos optimizando consultas SQL y aplicando caché selectivo en el backend.",
+      "Construí un panel de administración responsive con dashboard de métricas del negocio y gráficos dinámicos.",
     ],
-    technologies: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "Docker",
-      "Redis",
-      "Git",
-    ],
+    technologies: ["React", "NestJS", "PostgreSQL", "TypeORM"],
     accentTheme: {
       iconBg: "bg-violet-100/90 border-violet-200/80",
       iconColor: "text-violet-600",
@@ -92,54 +88,26 @@ export const experiences: ExperienceItem[] = [
   {
     id: "exp-3",
     step: "03",
-    role: "Frontend & UI Engineer",
-    company: "NovaScale Labs",
-    location: "Remoto · LATAM",
-    period: "2021 — 2022",
+    role: "Analista TI Jr.",
+    company: "PMI Lima Perú Chapter",
+    logo: "/images/pmi-lima-peru-chapter.png",
+    logoSize: "compact",
+    period: "Feb – Dic 2024",
     summary:
-      "Especialista en interfaces interactivas, sistemas de componentes reutilizables y optimización Core Web Vitals.",
+      "Página Web del CONCEPMI 2024",
     highlights: [
-      "Desarrollé más de 40 componentes reutilizables documentados con pruebas de accesibilidad y teclado.",
-      "Incrementé la conversión de landing pages comerciales en un +34% mediante mejoras de rendimiento y micro-interacciones.",
-      "Integración de pasarelas de pago Stripe y paneles de autogestión de suscripciones.",
+      "Lideré un equipo de 6 personas en el desarrollo del sitio web responsive, con pagos en línea integrados (Stripe).",
+      "Reforcé la seguridad del flujo de pagos con protección de rutas, tokenización con Stripe y MFA.",
+      "Apliqué SCRUM, reduciendo ~20% el tiempo de entrega de proyectos.",
     ],
-    technologies: [
-      "TypeScript",
-      "React",
-      "Tailwind CSS",
-      "Radix UI",
-      "Framer Motion",
-      "REST APIs",
-    ],
+    technologies: ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL"],
     accentTheme: {
       iconBg: "bg-indigo-100/90 border-indigo-200/80",
       iconColor: "text-indigo-600",
-      pillBg: "bg-sky-500/10 border-sky-500/20",
-      pillText: "text-sky-700",
+      pillBg: "bg-indigo-500/10 border-indigo-500/20",
+      pillText: "text-indigo-700",
     },
     iconType: "frontend",
-  },
-  {
-    id: "exp-4",
-    step: "04",
-    role: "Backend & Cloud Junior Developer",
-    company: "Kinetix Tech",
-    location: "Lima, Perú",
-    period: "2020 — 2021",
-    summary:
-      "Desarrollo de servicios RESTful, modelado relacional en PostgreSQL y administración de servidores Linux.",
-    highlights: [
-      "Optimización de consultas SQL complejas logrando reducciones del 70% en latencia p95.",
-      "Configuración de entornos Linux seguros, proxies inversos Nginx y monitoreo automatizado.",
-    ],
-    technologies: ["Node.js", "PostgreSQL", "Linux", "Docker", "Git"],
-    accentTheme: {
-      iconBg: "bg-teal-100/90 border-teal-200/80",
-      iconColor: "text-teal-600",
-      pillBg: "bg-teal-500/10 border-teal-500/20",
-      pillText: "text-teal-700",
-    },
-    iconType: "cloud",
   },
 ];
 

@@ -48,23 +48,26 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
                   <div
                     class={`hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border ${exp.accentTheme.iconBg} dark:bg-white/10 dark:border-white/15 ${exp.accentTheme.iconColor} dark:text-violet-300 shadow-xs`}
                   >
-                    {exp.iconType === 'architecture' && (
+                    {exp.logo && (
                       <img
-                        src="https://rapidboard.app/logo/logo.svg"
-                        alt="Logo de RapidBoard"
-                        class="h-8 w-8 object-contain"
+                        src={exp.logo}
+                        alt={exp.company}
+                        class={exp.logoSize === 'compact' ? 'h-6 w-6 object-contain' : 'h-8 w-8 object-contain'}
                         width="32"
                         height="32"
                         loading="lazy"
                       />
                     )}
-                    {exp.iconType === 'fullstack' && (
+                    {!exp.logo && exp.iconType === 'architecture' && (
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                    )}
+                    {!exp.logo && exp.iconType === 'fullstack' && (
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                     )}
-                    {exp.iconType === 'frontend' && (
+                    {!exp.logo && exp.iconType === 'frontend' && (
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
                     )}
-                    {exp.iconType === 'cloud' && (
+                    {!exp.logo && exp.iconType === 'cloud' && (
                       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                     )}
                   </div>
@@ -84,7 +87,10 @@ import { experienceSectionData, experiences, engineeringProcess } from '../../da
                       )}
                     </div>
                     <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
-                      {exp.company} <span class="text-slate-400 dark:text-slate-400 font-normal">· {exp.location}</span>
+                      {exp.company}
+                      {exp.location && (
+                        <span class="text-slate-400 dark:text-slate-400 font-normal"> · {exp.location}</span>
+                      )}
                     </p>
                   </div>
                 </div>
