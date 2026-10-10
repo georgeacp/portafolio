@@ -13,60 +13,50 @@ interface ProjectsShowcaseProps {
 }
 
 function ProjectVisualMockup({ type }: { type: ProjectItem['mockupType'] }) {
-  if (type === 'fintech-mobile') {
+  if (type === 'rapidboard-dashboard') {
     return (
-      <div className="relative h-full w-full flex items-center justify-center gap-2.5 px-2 pt-2">
-        {/* Left Phone */}
-        <div className="w-[29%] h-[92%] translate-y-2 -rotate-3 rounded-2xl bg-white/95 dark:bg-[#191632]/95 border border-white dark:border-white/15 shadow-md p-2 flex flex-col justify-between">
-          <div className="h-12 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 p-1.5 text-white">
-            <div className="text-[7px] opacity-80">Balance Total</div>
-            <div className="text-[10px] font-extrabold">$24,850</div>
-          </div>
-          <div className="space-y-1">
-            <div className="h-2 w-full rounded bg-slate-100 dark:bg-white/10" />
-            <div className="h-2 w-4/5 rounded bg-slate-100 dark:bg-white/10" />
-            <div className="h-6 w-full rounded-lg bg-violet-50 dark:bg-violet-500/20 border border-violet-100 dark:border-violet-400/25" />
-          </div>
-        </div>
-
-        {/* Center Featured Phone */}
-        <div className="w-[33%] h-[98%] z-10 rounded-2xl bg-white dark:bg-[#221E42] border-2 border-white dark:border-white/25 shadow-xl p-2.5 flex flex-col justify-between">
-          <div className="flex items-center justify-between">
-            <span className="h-2 w-8 rounded-full bg-violet-200 dark:bg-violet-400/40" />
-            <span className="h-2 w-2 rounded-full bg-indigo-500 dark:bg-indigo-400" />
-          </div>
-          <div className="rounded-xl bg-gradient-to-r from-violet-600 via-indigo-500 to-sky-400 p-2 text-white shadow-xs">
-            <div className="text-[7px] uppercase tracking-wider opacity-80">Finova Card</div>
-            <div className="text-[11px] font-black mt-0.5">$48,920.00</div>
-            <div className="mt-1.5 flex justify-between text-[6px] opacity-90">
-              <span>•••• 4829</span>
-              <span>09/28</span>
+      <div className="h-full w-full flex items-center justify-center px-2 py-2">
+        <div className="flex h-full w-full overflow-hidden rounded-xl border border-white/90 bg-white/95 shadow-lg dark:border-white/15 dark:bg-[#191632]/95">
+          <aside className="flex w-[22%] shrink-0 flex-col gap-2 border-r border-slate-100 bg-slate-50/80 p-2 dark:border-white/10 dark:bg-white/[0.03]">
+            <div className="mb-1 flex items-center gap-1.5">
+              <span className="flex h-4 w-4 items-center justify-center rounded-md bg-gradient-to-br from-sky-500 to-indigo-600 text-[8px] font-black text-white">R</span>
+              <span className="text-[7px] font-extrabold text-slate-800 dark:text-white">RapidBoard</span>
             </div>
-          </div>
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-white/8 px-1.5 py-1">
-              <span className="h-2 w-10 rounded bg-slate-200 dark:bg-white/20" />
-              <span className="text-[7px] font-bold text-emerald-600 dark:text-emerald-400">+$1,240</span>
+            <span className="rounded-md bg-indigo-50 px-1.5 py-1 text-[6px] font-bold text-indigo-700 dark:bg-indigo-400/15 dark:text-indigo-200">Dashboards</span>
+            <span className="px-1.5 text-[6px] font-medium text-slate-500 dark:text-slate-400">Fuentes</span>
+            <span className="px-1.5 text-[6px] font-medium text-slate-500 dark:text-slate-400">Drift IA</span>
+          </aside>
+          <div className="flex min-w-0 flex-1 flex-col gap-2 bg-slate-50/50 p-2 dark:bg-white/[0.02]">
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <div className="text-[8px] font-extrabold text-slate-900 dark:text-white">Resumen del negocio</div>
+                <div className="text-[6px] text-slate-500 dark:text-slate-400">Una vista clara de tus datos</div>
+              </div>
+              <span className="shrink-0 rounded-full bg-sky-50 px-1.5 py-1 text-[5px] font-bold text-sky-700 dark:bg-sky-400/15 dark:text-sky-200">EJEMPLO</span>
             </div>
-            <div className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-white/8 px-1.5 py-1">
-              <span className="h-2 w-8 rounded bg-slate-200 dark:bg-white/20" />
-              <span className="text-[7px] font-bold text-violet-600 dark:text-violet-300">+$890</span>
+            <div className="grid grid-cols-3 gap-1.5">
+              {['KPI', 'Tabla', 'Gráfico'].map((label) => (
+                <div key={label} className="rounded-md border border-slate-100 bg-white p-1.5 dark:border-white/10 dark:bg-white/[0.04]">
+                  <div className="text-[5px] text-slate-500 dark:text-slate-400">{label}</div>
+                  <div className="mt-1 h-1.5 w-3/4 rounded bg-slate-200 dark:bg-white/15" />
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-
-        {/* Right Phone */}
-        <div className="w-[29%] h-[92%] translate-y-2 rotate-3 rounded-2xl bg-white/95 dark:bg-[#191632]/95 border border-white dark:border-white/15 shadow-md p-2 flex flex-col justify-between">
-          <div className="text-[8px] font-bold text-slate-700 dark:text-slate-200">Cashflow</div>
-          <div className="flex items-end justify-between gap-1 h-14 px-1">
-            <span className="w-2 h-6 rounded-t bg-violet-200 dark:bg-violet-500/40" />
-            <span className="w-2 h-9 rounded-t bg-violet-400" />
-            <span className="w-2 h-7 rounded-t bg-indigo-300 dark:bg-indigo-400/60" />
-            <span className="w-2 h-12 rounded-t bg-indigo-600 dark:bg-indigo-400" />
-            <span className="w-2 h-10 rounded-t bg-sky-400" />
-          </div>
-          <div className="h-4 w-full rounded-lg bg-slate-900 dark:bg-violet-600 text-white text-[6px] font-bold flex items-center justify-center">
-            Transferir ↗
+            <div className="flex min-h-0 flex-1 gap-1.5">
+              <div className="flex min-w-0 flex-1 flex-col justify-between rounded-md border border-slate-100 bg-white p-1.5 dark:border-white/10 dark:bg-white/[0.04]">
+                <div className="text-[6px] font-bold text-slate-700 dark:text-slate-200">Ventas por canal</div>
+                <div className="flex h-10 items-end justify-between gap-1 px-1">
+                  {[38, 58, 44, 78, 61, 92, 70].map((height, index) => (
+                    <span key={index} style={{ height: `${height}%` }} className={`w-full rounded-t-sm ${index === 5 ? 'bg-indigo-500' : 'bg-sky-300 dark:bg-sky-400/50'}`} />
+                  ))}
+                </div>
+              </div>
+              <div className="flex min-w-0 w-[40%] flex-col justify-between rounded-md border border-violet-100 bg-violet-50/70 p-1.5 dark:border-violet-300/15 dark:bg-violet-400/[0.08]">
+                <div className="text-[6px] font-bold text-violet-800 dark:text-violet-200">✧ Drift IA</div>
+                <div className="text-[6px] leading-snug text-slate-700 dark:text-slate-200">¿Qué canal genera más ingresos?</div>
+                <div className="h-1 w-2/3 rounded bg-violet-300/80 dark:bg-violet-300/40" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -311,27 +301,29 @@ export default function ProjectsShowcase({
 
                   {/* Circular Glass Action Buttons */}
                   <div className="flex items-center gap-1.5 shrink-0">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Ver código de ${project.title} en GitHub`}
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/85 dark:bg-white/12 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white shadow-xs transition-all hover:scale-105"
-                    >
-                      <svg
-                        className="h-4 w-4"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
+                    {project.repoUrl && (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Ver código de ${project.title} en GitHub`}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/85 dark:bg-white/12 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white shadow-xs transition-all hover:scale-105"
                       >
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                        <path d="M9 18c-4.51 2-5-2-7-2" />
-                      </svg>
-                    </a>
+                        <svg
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                          <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                      </a>
+                    )}
                     <a
                       href={project.demoUrl}
                       target="_blank"

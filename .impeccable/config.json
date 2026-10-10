@@ -20,6 +20,16 @@
         ],
         "createdAt": "2026-10-10T22:03:15.698Z",
         "reason": "The existing portfolio uses this gradient as the established emphasis treatment for its hero experience metric; this request changes the metric value only."
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "src/components/sections/ProjectsShowcase.tsx",
+          "src/data/projects.ts"
+        ],
+        "createdAt": "2026-10-10T22:13:09.881Z",
+        "reason": "Agent: Existing project-card accents and violet/indigo interaction colors are part of the portfolio's established visual system, as declared by its brand tokens in src/styles/global.css; these findings predate the RapidBoard replacement."
       }
     ]
   }
