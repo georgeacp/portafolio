@@ -31,29 +31,37 @@ export default function NavbarIsland({
     const root = document.documentElement;
     setIsDark(root.classList.contains('dark'));
 
-    const handleScroll = () => {
+    const syncActiveSection = () => {
       setScrolled(window.scrollY > 16);
 
-      const sectionPositions = navItems
-        .map((item) => {
-          const el = document.getElementById(item.id);
-          if (!el) return null;
-          const rect = el.getBoundingClientRect();
-          return { id: item.id, top: rect.top };
-        })
-        .filter(Boolean) as { id: string; top: number }[];
+      // Keep the last section that has crossed the reading line active. The
+      // previous overlapping range could keep an earlier link (usually Home)
+      // active while the next section was already visible.
+      const readingLine = window.scrollY + Math.min(180, window.innerHeight * 0.25);
+      let currentId = navItems[0]?.id ?? 'home';
 
-      const current = sectionPositions.find(
-        (sec) => sec.top <= 240 && sec.top >= -600
-      );
-      if (current) {
-        setActiveId(current.id);
+      for (const item of navItems) {
+        const section = document.getElementById(item.id);
+        if (!section) continue;
+
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        if (sectionTop <= readingLine) {
+          currentId = item.id;
+        } else {
+          break;
+        }
       }
+
+      setActiveId(currentId);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', syncActiveSection, { passive: true });
+    window.addEventListener('hashchange', syncActiveSection);
+    syncActiveSection();
+    return () => {
+      window.removeEventListener('scroll', syncActiveSection);
+      window.removeEventListener('hashchange', syncActiveSection);
+    };
   }, [navItems]);
 
   const toggleTheme = () => {
@@ -184,6 +192,9 @@ export default function NavbarIsland({
             {/* "Hablemos ↗" CTA Pill */}
             <a
               href={talkCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir WhatsApp para escribir un mensaje"
               className="max-[480px]:hidden inline-flex min-h-11 items-center gap-2 rounded-full bg-white/95 dark:bg-white/14 hover:bg-white dark:hover:bg-white/22 border border-white dark:border-white/20 px-4 sm:px-5 py-2 text-xs sm:text-[13px] font-bold text-slate-900 dark:text-white shadow-[0_6px_20px_-4px_rgba(79,70,229,0.14)] transition-all duration-200 hover:-translate-y-0.5 active:scale-98"
             >
               <span>{talkCta.label}</span>
@@ -240,6 +251,16 @@ export default function NavbarIsland({
                 );
               })}
             </ul>
+            <a
+              href={talkCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-violet-700 dark:bg-white dark:text-slate-950 dark:hover:bg-violet-200"
+            >
+              <span>{talkCta.label}</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

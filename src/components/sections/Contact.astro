@@ -1,5 +1,4 @@
 ---
-import ContactForm from './ContactForm';
 import { profileData } from '../../data/profile';
 ---
 
@@ -23,13 +22,17 @@ import { profileData } from '../../data/profile';
       <div class="absolute bottom-8 right-10 h-6 w-14 rotate-15 rounded-full bg-sky-200/75 blur-[3px]"></div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start relative z-10">
-      <!-- Left Column: Invitation + Direct Contact Details -->
-      <div class="lg:col-span-5 flex flex-col justify-between h-full">
-        <div>
-          <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400 mb-2">
+    <div class="relative z-10">
+      <div>
+        <div class="mb-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+          <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400">
             {profileData.contact.eyebrow}
           </p>
+          <div class="inline-flex items-center gap-2.5 rounded-full border border-violet-200/80 bg-white/80 px-3.5 py-2 text-[11px] sm:text-xs font-semibold text-slate-700 shadow-[0_8px_22px_-12px_rgba(79,70,229,0.32)] backdrop-blur-sm dark:border-violet-300/20 dark:bg-white/[0.08] dark:text-slate-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_9px_rgba(16,185,129,0.55)]"></span>
+            <span>{profileData.contact.availability}</span>
+          </div>
+        </div>
 
           <h2
             id="contact-heading"
@@ -44,7 +47,7 @@ import { profileData } from '../../data/profile';
           </p>
 
           <!-- Direct Contact Rows -->
-          <ul class="mt-7 space-y-4">
+          <ul class="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <li class="flex items-center gap-3.5">
               <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/90 dark:bg-white/10 border border-white dark:border-white/20 text-violet-600 dark:text-violet-300 shadow-xs">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -89,22 +92,6 @@ import { profileData } from '../../data/profile';
           </ul>
         </div>
 
-        <!-- Availability Status Pill -->
-        <div class="mt-8 pt-4">
-          <div class="glass-pill inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200">
-            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]"></span>
-            <span>{profileData.contact.availability}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: Interactive Glass Form Island -->
-      <div class="lg:col-span-7">
-        <ContactForm
-          client:visible
-          projectTypes={profileData.contact.projectTypes}
-        />
-      </div>
     </div>
   </div>
 </section>

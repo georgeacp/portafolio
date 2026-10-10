@@ -26,6 +26,8 @@ export const navItems: NavItem[] = [
   { label: "Contáctame", href: "#contacto", id: "contacto" },
 ];
 
+const contactPhone = "+51 931356773";
+
 export const profileData = {
   monogram: "G",
   name: "George Castillo",
@@ -44,7 +46,7 @@ export const profileData = {
   },
   talkCta: {
     label: "Hablemos",
-    href: "#contacto",
+    href: `https://wa.me/${contactPhone.replace(/\D/g, "")}?text=${encodeURIComponent("Hola George, vi tu portafolio y me gustaría conversar contigo.")}`,
   },
   heroFloatingStats: {
     yearsValue: "2+",
@@ -66,14 +68,14 @@ export const profileData = {
     titleLine1: "Ingeniería con Empatía",
     titleLine2: "Arquitectura con Propósito",
     paragraphs: [
-      "Soy un desarrollador Full Stack con más de 5 años de experiencia transformando problemas técnicos complejos en aplicaciones web rápidas, intuitivas y listas para escalar en producción.",
+      "Soy un desarrollador Full Stack con más de 2 años de experiencia transformando problemas técnicos complejos en aplicaciones web rápidas, intuitivas y listas para escalar en producción.",
       "Creo firmemente en la ingeniería centrada en el usuario, el código limpio con tipado estricto y el cuidado obsesivo por cada micro-interacción y milisegundo de carga.",
     ],
     ctaLabel: "Mi Trayectoria",
     ctaHref: "#experiencia",
     metrics: [
       {
-        value: "5+",
+        value: "2+",
         label: "Años de Experiencia",
         icon: "experience",
         accentColor: "#8B5CF6",
@@ -99,7 +101,7 @@ export const profileData = {
     subtitle:
       "Disponible para liderar desarrollos Full Stack, arquitecturas modernas con Astro/React/Node o consultoría de producto.",
     email: "gcastle.dev@gmail.com",
-    phone: "+51 931356773",
+    phone: contactPhone,
     location: "Lima, Perú · Remoto Global",
     availability: "Disponible para nuevos proyectos",
     projectTypes: [

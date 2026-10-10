@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "src/components/sections/Experience.astro"
+        ],
+        "createdAt": "2026-10-10T21:55:34.798Z",
+        "reason": "The existing portfolio design defines violet and indigo as brand colors in global.css and uses them for the current timeline step; the user asked that the Experience logo background match that page design."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/components/sections/Hero.astro"
+        ],
+        "createdAt": "2026-10-10T22:03:15.698Z",
+        "reason": "The existing portfolio uses this gradient as the established emphasis treatment for its hero experience metric; this request changes the metric value only."
+      }
+    ]
+  }
+}
