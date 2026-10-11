@@ -223,7 +223,7 @@ export default function NavbarIsland({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="glass-section mt-2.5 rounded-3xl p-4 lg:hidden"
+            className="glass-section absolute inset-x-0 top-full mt-2.5 max-h-[calc(100dvh-7rem)] overflow-y-auto rounded-3xl p-4 lg:hidden"
           >
             <ul className="flex flex-col gap-1.5">
               {navItems.map((item) => {
