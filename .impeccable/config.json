@@ -30,6 +30,15 @@
         ],
         "createdAt": "2026-10-10T22:13:09.881Z",
         "reason": "Agent: Existing project-card accents and violet/indigo interaction colors are part of the portfolio's established visual system, as declared by its brand tokens in src/styles/global.css; these findings predate the RapidBoard replacement."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/styles/global.css"
+        ],
+        "createdAt": "2026-10-11T23:45:07.788Z",
+        "reason": "Existing portfolio gradient typography is intentional and preserved during the production backdrop-filter compatibility fix; the established visual design is unchanged."
       }
     ]
   }

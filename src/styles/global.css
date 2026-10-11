@@ -97,8 +97,8 @@ html.dark body {
 /* Master outer frosted section container */
 .glass-section {
   background: var(--glass-section-bg);
-  backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(160%);
   border: 1px solid var(--glass-section-border);
   box-shadow: var(--shadow-section);
   transition:
@@ -110,8 +110,8 @@ html.dark body {
 /* Inner frosted sub-cards */
 .glass-card {
   background: var(--glass-card-bg);
-  backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--glass-card-border);
   box-shadow: var(--shadow-card);
   transition:
@@ -138,8 +138,8 @@ html.dark .glass-card-interactive:hover {
 /* Pill glass badge / navbar surface */
 .glass-pill {
   background: var(--glass-pill-bg);
-  backdrop-filter: blur(22px) saturate(170%);
   -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
   border: 1px solid var(--glass-pill-border);
   box-shadow: var(--shadow-pill);
   transition:
