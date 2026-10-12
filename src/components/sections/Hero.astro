@@ -1,5 +1,10 @@
 ---
 import { profileData } from '../../data/profile';
+import astroIcon from 'devicon/icons/astro/astro-original.svg?url';
+import reactIcon from 'devicon/icons/react/react-original.svg?url';
+import nodejsIcon from 'devicon/icons/nodejs/nodejs-original.svg?url';
+import awsIcon from 'devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg?url';
+import postgresqlIcon from 'devicon/icons/postgresql/postgresql-original.svg?url';
 ---
 
 <section id="home" aria-labelledby="hero-heading" class="mb-6">
@@ -82,23 +87,23 @@ import { profileData } from '../../data/profile';
           </p>
           <div class="flex flex-wrap items-center gap-x-6 gap-y-2.5 text-slate-400/95">
             <span class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold tracking-tight text-slate-500/80 dark:text-slate-300/80 hover:text-slate-800 dark:hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-violet-500/80 dark:text-violet-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 20h4.5l4.5-9.5L16.5 20H21L12 2zm0 13.5c-1.5 1.2-2.2 2.8-1.5 4.5 1.1-.6 2.1-.6 3 0 .7-1.7 0-3.3-1.5-4.5z"/></svg>
+              <img src={astroIcon} alt="" width="16" height="16" class="h-4 w-4 shrink-0 object-contain dark:brightness-0 dark:invert" />
               Astro
             </span>
             <span class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold tracking-tight text-slate-500/80 dark:text-slate-300/80 hover:text-slate-800 dark:hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-indigo-500/80 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.2"/><ellipse rx="10" ry="4.2" transform="matrix(.866 .5 -.5 .866 12 12)"/><ellipse rx="10" ry="4.2" transform="matrix(.866 -.5 .5 .866 12 12)"/></svg>
+              <img src={reactIcon} alt="" width="16" height="16" class="h-4 w-4 shrink-0 object-contain" />
               React
             </span>
             <span class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold tracking-tight text-slate-500/80 dark:text-slate-300/80 hover:text-slate-800 dark:hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-indigo-500/80 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"/></svg>
+              <img src={nodejsIcon} alt="" width="16" height="16" class="h-4 w-4 shrink-0 object-contain" />
               Node.js
             </span>
             <span class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold tracking-tight text-slate-500/80 dark:text-slate-300/80 hover:text-slate-800 dark:hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-violet-500/80 dark:text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+              <img src={awsIcon} alt="" width="20" height="16" class="h-4 w-5 shrink-0 object-contain dark:brightness-0 dark:invert" />
               AWS Cloud
             </span>
             <span class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold tracking-tight text-slate-500/80 dark:text-slate-300/80 hover:text-slate-800 dark:hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-indigo-500/80 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+              <img src={postgresqlIcon} alt="" width="16" height="16" class="h-4 w-4 shrink-0 object-contain dark:brightness-125" />
               PostgreSQL
             </span>
           </div>
