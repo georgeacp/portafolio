@@ -29,41 +29,8 @@ export const experienceSectionData = {
 
 export const experiences: ExperienceItem[] = [
   {
-    id: "exp-1",
-    step: "01",
-    role: "Full Stack - Devops",
-    company: "Rapidboard",
-    location: "Remoto · Trujillo, PE",
-    logo: "https://rapidboard.app/logo/logo.svg",
-    period: "2025 — Presente",
-    current: true,
-    summary:
-      "Cofundador junto a mi equipo una plataforma SaaS orientada a la creación de dashboards y reportes ejecutivos generados con inteligencia artificial.",
-    highlights: [
-      "Diseñé y administré de forma autónoma la infraestructura de microservicios en AWS con Infraestructura como Código con Pulumi",
-      "Puse el entorno de producción en marcha en 15 días mediante automatización de infraestructura y despliegues.",
-      "Automaticé pipelines de CI/CD por ambiente en GitHub Actions, con gestión segura de variables en AWS Secrets Manager.",
-    ],
-    technologies: [
-      "React",
-      "Nest Js",
-      "Node.js",
-      "PostgreSQL",
-      "AWS",
-      "Pulumi",
-      "Docker",
-    ],
-    accentTheme: {
-      iconBg: "bg-violet-100/90 border-violet-200/80",
-      iconColor: "text-violet-600",
-      pillBg: "bg-violet-500/10 border-violet-500/20",
-      pillText: "text-violet-700",
-    },
-    iconType: "architecture",
-  },
-  {
     id: "exp-2",
-    step: "02",
+    step: "01",
     role: "Desarrollador Full Stack Jr.",
     company: "Grupo Insight Out",
     logo: "/images/grupo-insight-out.png",
@@ -87,7 +54,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     id: "exp-3",
-    step: "03",
+    step: "02",
     role: "Analista TI Jr.",
     company: "PMI Lima Perú Chapter",
     logo: "/images/pmi-lima-peru-chapter.png",

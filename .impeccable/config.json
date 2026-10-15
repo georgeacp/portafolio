@@ -29,7 +29,7 @@
           "src/data/projects.ts"
         ],
         "createdAt": "2026-10-10T22:13:09.881Z",
-        "reason": "Agent: Existing project-card accents and violet/indigo interaction colors are part of the portfolio's established visual system, as declared by its brand tokens in src/styles/global.css; these findings predate the RapidBoard replacement."
+        "reason": "Agent: Existing project-card accents and violet/indigo interaction colors are part of the portfolio's established visual system, as declared by its brand tokens in src/styles/global.css."
       },
       {
         "rule": "gradient-text",

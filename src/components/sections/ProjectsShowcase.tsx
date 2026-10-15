@@ -53,53 +53,7 @@ function ProjectVisualMockup({ type }: { type: ProjectItem['mockupType'] }) {
     );
   }
 
-  return (
-      <div className="h-full w-full flex items-center justify-center px-2 py-2">
-        <div className="flex h-full w-full overflow-hidden rounded-xl border border-white/90 bg-white/95 shadow-lg dark:border-white/15 dark:bg-[#191632]/95">
-          <aside className="flex w-[22%] shrink-0 flex-col gap-2 border-r border-slate-100 bg-slate-50/80 p-2 dark:border-white/10 dark:bg-white/[0.03]">
-            <div className="mb-1 flex items-center gap-1.5">
-              <span className="flex h-4 w-4 items-center justify-center rounded-md bg-gradient-to-br from-sky-500 to-indigo-600 text-[8px] font-black text-white">R</span>
-              <span className="text-[7px] font-extrabold text-slate-800 dark:text-white">RapidBoard</span>
-            </div>
-            <span className="rounded-md bg-indigo-50 px-1.5 py-1 text-[6px] font-bold text-indigo-700 dark:bg-indigo-400/15 dark:text-indigo-200">Dashboards</span>
-            <span className="px-1.5 text-[6px] font-medium text-slate-500 dark:text-slate-400">Fuentes</span>
-            <span className="px-1.5 text-[6px] font-medium text-slate-500 dark:text-slate-400">Drift IA</span>
-          </aside>
-          <div className="flex min-w-0 flex-1 flex-col gap-2 bg-slate-50/50 p-2 dark:bg-white/[0.02]">
-            <div className="flex items-center justify-between gap-2">
-              <div>
-                <div className="text-[8px] font-extrabold text-slate-900 dark:text-white">Resumen del negocio</div>
-                <div className="text-[6px] text-slate-500 dark:text-slate-400">Una vista clara de tus datos</div>
-              </div>
-              <span className="shrink-0 rounded-full bg-sky-50 px-1.5 py-1 text-[5px] font-bold text-sky-700 dark:bg-sky-400/15 dark:text-sky-200">EJEMPLO</span>
-            </div>
-            <div className="grid grid-cols-3 gap-1.5">
-              {['KPI', 'Tabla', 'Gráfico'].map((label) => (
-                <div key={label} className="rounded-md border border-slate-100 bg-white p-1.5 dark:border-white/10 dark:bg-white/[0.04]">
-                  <div className="text-[5px] text-slate-500 dark:text-slate-400">{label}</div>
-                  <div className="mt-1 h-1.5 w-3/4 rounded bg-slate-200 dark:bg-white/15" />
-                </div>
-              ))}
-            </div>
-            <div className="flex min-h-0 flex-1 gap-1.5">
-              <div className="flex min-w-0 flex-1 flex-col justify-between rounded-md border border-slate-100 bg-white p-1.5 dark:border-white/10 dark:bg-white/[0.04]">
-                <div className="text-[6px] font-bold text-slate-700 dark:text-slate-200">Ventas por canal</div>
-                <div className="flex h-10 items-end justify-between gap-1 px-1">
-                  {[38, 58, 44, 78, 61, 92, 70].map((height, index) => (
-                    <span key={index} style={{ height: `${height}%` }} className={`w-full rounded-t-sm ${index === 5 ? 'bg-indigo-500' : 'bg-sky-300 dark:bg-sky-400/50'}`} />
-                  ))}
-                </div>
-              </div>
-              <div className="flex min-w-0 w-[40%] flex-col justify-between rounded-md border border-violet-100 bg-violet-50/70 p-1.5 dark:border-violet-300/15 dark:bg-violet-400/[0.08]">
-                <div className="text-[6px] font-bold text-violet-800 dark:text-violet-200">✧ Drift IA</div>
-                <div className="text-[6px] leading-snug text-slate-700 dark:text-slate-200">¿Qué canal genera más ingresos?</div>
-                <div className="h-1 w-2/3 rounded bg-violet-300/80 dark:bg-violet-300/40" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  );
+  return null;
 }
 
 export default function ProjectsShowcase({
